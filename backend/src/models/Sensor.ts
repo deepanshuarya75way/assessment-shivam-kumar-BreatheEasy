@@ -31,7 +31,6 @@ const SensorSchema = new Schema(
     sensorId: {
       type: String,
       required: true,
-      unique: true,
     },
     name: {
       type: String,

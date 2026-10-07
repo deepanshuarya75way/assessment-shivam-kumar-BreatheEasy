@@ -86,4 +86,9 @@ export const updatePreferences = async (email, preferences) => {
   return api.put('/push/preferences', { email, preferences });
 };
 
+
+export const feedbackData = async (predictiondata) => {
+  return api.post('/push/feedback' , {predictiondata});
+};
+
 export default api;

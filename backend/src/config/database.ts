@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 import config from './index.js';
 import logger from './logger.js';
 
+import dns from 'node:dns'; // or const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']); // Forces use of Google DNS
+
+
 const connectDB = async (): Promise<void> => {
   try {
     await mongoose.connect(config.mongodbUri);

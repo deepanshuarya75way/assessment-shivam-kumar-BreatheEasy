@@ -27,7 +27,7 @@ const UserSchema = new Schema<IUser>(
     email: {
       type: String,
       required: true,
-      unique: true,
+      unique: true, // <-- Mongoose automatically creates a unique index here
       lowercase: true,
       trim: true,
       match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address'],
@@ -75,8 +75,7 @@ const UserSchema = new Schema<IUser>(
   }
 );
 
-// Index for email lookup
-UserSchema.index({ email: 1 });
+// REMOVED: UserSchema.index({ email: 1 }); <-- This was causing the duplicate warning
 
 // Index for notification queries
 UserSchema.index({ 'preferences.notificationsEnabled': 1, isActive: 1 });

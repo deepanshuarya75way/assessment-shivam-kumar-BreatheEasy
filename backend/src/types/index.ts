@@ -27,3 +27,8 @@ export type AsyncHandler = (
   res: Response,
   next: NextFunction
 ) => Promise<any>;
+
+
+export type feedback = {
+  satisfied: boolean;
+}
