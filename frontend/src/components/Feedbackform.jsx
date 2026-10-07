@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const feedback = () => {
   const [satisfied, setSatisfied] = useState(null);
-  const [fedback, setFeedback] = useState('');
+  const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState('false');
 
   const handleSubmit = (e) => {
